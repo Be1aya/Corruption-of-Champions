@@ -643,7 +643,9 @@ public class Appearance extends Utils
 					"animalistic stallion-prick",
 					"equine dong",
 					"beast cock",
-					"flared stallion-cock");
+					"flared stallion-cock",
+					"stallion-shaft",
+					"mare-mounter");
 			}
 			else if (cockType == CockTypesEnum.DEMON) {
 				return randomChoice("nub-covered demon-dick",
@@ -1431,8 +1433,24 @@ public class Appearance extends Utils
 			if (i_creature.ballSize > 1 && (rand(3) <= 1 || i_forcedSize)) {
 				if (description) description += " ";
 
-				if (i_creature.ballSize >= 18)
+				if (i_creature.ballSize >= 400)
 					description += "hideously swollen and oversized";
+				else if (i_creature.ballSize >= 200)
+					description += "giraffe-sized";
+				else if (i_creature.ballSize >= 140)
+					description += "behemoth-sized";
+				else if (i_creature.ballSize >= 120)
+					description += "behemoth-sized";
+				else if (i_creature.ballSize >= 100)
+					description += "bed-sized";
+				else if (i_creature.ballSize >= 80)
+					description += "bed-sized";
+				else if (i_creature.ballSize >= 60)
+					description += "person-sized";
+				else if (i_creature.ballSize >= 40)
+					description += "barrel-sized";
+				else if (i_creature.ballSize >= 25)
+					description += "exercise-ball-sized";
 				else if (i_creature.ballSize >= 15)
 					description += "beachball-sized";
 				else if (i_creature.ballSize >= 12)
@@ -1469,7 +1487,10 @@ public class Appearance extends Utils
 				if (description) description += " ";
 				options = ["overflowing",
 					"swollen",
-					"cum-engorged"];
+					"cum-engorged",
+					"churning",
+					"heavy",
+					"practically sloshing"];
 				description += randomChoice(options);
 
 			}
