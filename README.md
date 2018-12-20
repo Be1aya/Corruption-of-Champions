@@ -1,18 +1,14 @@
-Corruption-of-Champions
+Corruption-of-Champions-Xianixa-Alt
 =======================
 
 NOTE: CONTAINS MATURE CONTENT. ADULTS ONLY
 
-CoC source from Fenoxo.
+Fork of Xianixa by Ormael which is based from the CoC source from Fenoxo.
 Modifications by everyone at:  
-https://github.com/herp-a-derp/Corruption-of-Champions/graphs/contributors
-
-Check out the wiki for information and the FAQ.
+https://github.com/Ormael7/Corruption-of-Champions/graphs/contributors
 
 Everything is copyright Fenoxo (fenoxo.com).
 
 **This repository is the game source-code only**
 
-Latest builds (e.g. an actual, playable version of the game) are generally available in the CoC-Alpha repo:  
-https://github.com/herp-a-derp/CoC-Alpha  
-Note that these are alpha-quality builds, and likely may have bugs and other fun easter-eggs.
+Note that this will be alpha-quality builds at best, and likely may have bugs and other fun easter-eggs.
