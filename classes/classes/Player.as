@@ -2135,9 +2135,9 @@ use namespace CoC;
 			else
 			{
 				if (tone > 150)
-					desc += "an extremely thickset frame and so much muscle others would find you harder to move than a huge boulder";
+					desc += "an extremely thickset frame, swollen belly and inhuman amounts of muscle that it would take many people to even entertain the thought of moving you";
 				else if (tone > 100)
-					desc += "an extremely thickset frame and so much muscle others would find you harder to move than a huge boulder";
+					desc += "an extremely thickset frame and so much muscle and belly others would find you harder to move than a huge boulder";
 				else if (tone > 90)
 					desc += "an extremely thickset frame and so much muscle others would find you harder to move than a huge boulder";
 				else if (tone > 75)
