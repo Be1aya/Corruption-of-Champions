@@ -1,5 +1,4 @@
-package classes.Scenes.Dungeons.D3
-{
+package classes.Scenes.Dungeons.D3{
 import classes.BodyParts.Butt;
 import classes.BodyParts.Hips;
 import classes.CockTypesEnum;
@@ -12,8 +11,14 @@ import classes.internals.WeightedDrop;
 
 public class MinotaurKing extends Monster
 	{
+		private var _milkDrinks:int = 0;
+		private var _orgasms:int = 0;
+		private var _lastRoundStun:Boolean = false;
+		private var _lastSpellCastCount:int;
+		private var excelliaHP:int = 700 + (player.newGamePlusMod() * 500); //if knocked out, she won't be able to provide more milk.
 		public function MinotaurKing()
 		{
+			super();
 			this.a = "the ";
 			this.short = "minotaur king";
 			this.long = "";
@@ -52,9 +57,11 @@ public class MinotaurKing extends Monster
 
 		override public function get long():String
 		{
+			var str:* = null;
 			if (!_orgasms == 0)
 			{
 				return "Positioned between you and the Demon Queen is an opponent of singular size and stature - the Minotaur King. He is a beast beyond measure, covered in shaggy fur and a few scraps of leather that do nothing to hide the pillar of flared cuntplow between his legs. In his hands is a gigantic axe, though he seems loathe to use it, preferring to rely on the erotic scent emanating from between his legs. He smells virile, strong, and more alluring than you’d expect. You’d best be careful not to dwell on it.";
+				
 			}
 			else
 			{
@@ -79,8 +86,11 @@ public class MinotaurKing extends Monster
 				{
 				}
 				else if (_milkDrinks == 1) str += "\n\n<b>The King has been glancing appreciatively in your direction ever since he took a drink from his slave-slut’s nipples. Perhaps he’s more vulnerable to baser needs...</b>";
-				else str += "\n\n<b>The King’s nostrils flare as he stares at you. It’s clear that with every drink he takes from his slave-slut’s nipples, he becomes more receptive to your advances.</b>";
+				else if (_milkDrinks < 10) str += "\n\n<b>The King’s nostrils flare as he stares at you. It’s clear that with every drink he takes from his slave-slut’s nipples, he becomes more receptive to your advances.</b>";
+				else str += "\n\n<b>The King's belly looks swollen, clearly full of the milk of his slut. It looks like he won't be able to drink any more milk.</b>";
 				
+				if (excelliaHP <= 0)
+				str += "\n\n<b>Excellia appears to be unconscious due to the injuries you've inflicted to her.</b>";
 				return str;
 			}
 		}
@@ -94,7 +104,7 @@ public class MinotaurKing extends Monster
 				return;
 			}
 			
-			if (hpVictory)
+			if (hpVictory && _milkDrinks < 10)
 			{
 				hpRestore();
 				SceneLib.combat.combatRoundOver();
@@ -109,12 +119,8 @@ public class MinotaurKing extends Monster
 			if (player.isGargoyle()) SceneLib.d3.gargoyleBadEndD3();
 			else SceneLib.d3.minotaurKing.hailToTheKingBaby(hpVictory, pcCameWorms);
 		}
-
-		private var _milkDrinks:int = 0;
-		private var _orgasms:int = 0;
+		
 		public function get orgasms():int { return _orgasms; }
-		private var _lastRoundStun:Boolean = false;
-		private var _lastSpellCastCount:int;
 		
 		override protected function performCombatAction():void
 		{
@@ -234,11 +240,13 @@ public class MinotaurKing extends Monster
 		{
 			HP = maxHP();
 			lustVuln += 0.15;
+			lust += 2;
 
 			_milkDrinks++;
 			//Full HP restore.
 			outputText("Staggering back, the King wastes no time in appropriating his willing slave, lifting her up to his face as easily as one might heft a stein of fresh-brewed beer. One of her huge tits easily fits against the oversized minotaur’s lips, and you see him noisily gulping down a quick, milky pick-me-up. By the time he finishes, his wounds are closing, but his cock is twitching and leaking pre-cum like water from a sieve.");
 			outputText("\n\n<b>He looks like he’d be easier to arouse. Whatever’s in her milk may restore his wounds, but leave him vulnerable to his animalistic needs.</b>");
+			if (_milkDrinks >= 10) outputText("\n\n<b>It looks like the King's belly has completely swollen, too full to take any more milk.</b>");
 		}
 		
 		// copypasta I dun even give a fuck ¯\_(ツ)_/¯
@@ -276,6 +284,7 @@ public class MinotaurKing extends Monster
 			outputText("\n\nThe brute fucks her casually, using her like little more than a super-sized sex-toy. Every sheath-hilting clap of hips to ass sends jiggles through the nubile slave. Flecks of pussy-juice and pre-cum froth around the entrance to her gaped cunt while stray droplets slick the floor below. It’s a bestial mating, the kind that leaves no room for words on either partner’s face. The kind that has the cow-girl quivering and shaking in the throes of indescribable ecstasy, rendered incapable of something as simple as moaning.");
 			outputText("\n\nExcellia’s master joins her a second later. There’s little change in the sound of his grunts. You wouldn’t even know if it wasn’t for the sudden ballooning of her belly and the cascade of cum between her legs, coating her lord’s legs in a veneer of lusty white. The amount of spunk is absolutely gobsmacking. You watch in awe as Excellia’s formerly taut belly stretches into a gravid dome. She looks like she could give birth any moment now, yet there’s nothing in her womb but gallon upon gallon of tainted minotaur spunk.");
 			if (player.findPerk(PerkLib.MinotaurCumAddict) >= 0) outputText(" You’re jealous. All that cum must feel exquisite!");
+			if (player.findPerk(PerkLib.MinotaurTesticles) >= 0) outputText(" You're jealous. You wish that was your cum pumping into that cow-slut."); player.dynStats("lus", 5);
 			outputText("\n\nWhatever spell this forceful mating cast, it breaks the moment Excellia slides off her lord’s still-hard phallus. You close your mouth and ready your grip on your [weapon] as the Minotaur King straightens, breathing heavily. He looks a little woozy for the effort, but still good to fight. Maybe if you can bring him back to the peak, he’ll fall for good?");
 			lust = 0;
 		}
