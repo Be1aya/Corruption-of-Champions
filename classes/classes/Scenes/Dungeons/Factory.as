@@ -1653,7 +1653,9 @@ use namespace CoC;
 					simpleChoices("Fight", doFightSuccubus, "Go Demon", goDemon, "Hook Up", talkSuccubusYes, "", null, "", null);
 				}
 				//Not recognized
-				else if(player.humanScore() <= 3) {
+				// lets try a different way of determining this because having < 3 human score is impossible under normal circumstances in xianxia (check humanScore() in player.as to see what i mean) - belaya
+				//else if(player.humanScore() <= 3) {
+				else if(player.race() != "human") {
 					outputText("The busty succubus turns, her barely contained breasts jiggling obscenely as she notices you, \"<i>Oh, like hi there ");
 					if(player.gender == 1) outputText("stud");
 					else outputText("sexy");
