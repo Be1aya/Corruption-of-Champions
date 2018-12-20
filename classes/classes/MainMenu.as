@@ -93,13 +93,16 @@ public class MainMenu extends BaseContent {
 		outputText("\n\tAshi, SoS, Prisoner416, Zeikfried, et al");
 		outputText("\n\n<b>Open-source contributions by:</b> "); //Contributions
 		outputText("\n\taimozg, Amygdala, Cmacleod42, Enterprise2001, Fake-Name, Gedan, Yoffy, Kitteh6660, et al");
-		outputText("\n\n<b>Game Mod by:</b> Ormael"); //Mod Creator
+		outputText("\n\n<b>Game Mod by:</b> Ormael (Modified by Belaya)"); //Mod Creator
 		//Github for Original
 		outputText("\n\n<b><u>Original Game Github</u></b>");
 		outputText("\n<b>Source Code:</b> <u><a href='https://github.com/herp-a-derp/Corruption-of-Champions'>https://github.com/herp-a-derp/Corruption-of-Champions</a></u>");
 		outputText("\n<b>Bug Tracker:</b> <u><a href='https://github.com/herp-a-derp/Corruption-of-Champions/issues'>https://github.com/herp-a-derp/Corruption-of-Champions/issues</a></u>");
 		outputText("\n(requires an account, unfortunately)");
 		//Github for Mod
+		outputText("\n\n<b><u>Mod Github</u></b>");
+		outputText("\n<b>Source Code:</b> <u><a href='https://github.com/Ormael7/Corruption-of-Champions'>https://github.com/Ormael7/Corruption-of-Champions</a></u>");
+		outputText("\n<b>Also my Source here:</b> <u><a href='https://github.com/Be1aya/Corruption-of-Champions'>https://github.com/Be1aya/Corruption-of-Champions</a></u>");
 		//Disclaimer
 		outputText("\n\n<b><u>DISCLAIMER</u></b>");
 		outputText("<li>There are many strange and odd fetishes contained in this flash.  Peruse at own risk.</li>");
