@@ -441,14 +441,16 @@ package classes.Scenes.NPCs
 		}
 		public function fullMoonEventResistWinFireHerForest():void {
 			clearOutput();
-			if(player.cor => 70) {
+			if(player.cor >= 70) {
 			outputText("As you explore the forest you come upon a gruesome sight. You thought Luna would've made it back to Tel’Adre but it seems that she didn’t. She’s right there in front of you… hanging from a rope tied to a tree. The crazy bitch hung herself. You leave the gruesome scene, seemingly unphased by the sight. You walk away giddy at the thought that you don't have to deal with her anymore.\n\n");
+			flags[kFLAGS.LUNA_FOLLOWER] = 3;
+			doNext(camp.returnToCampUseOneHour);
 			}
 			else {
 			outputText("As you explore the forest you come upon a gruesome sight. You thought Luna would've made it back to Tel’Adre but it seems that she didn’t. She’s right there in front of you… hanging from a rope tied to a tree. That she'd fall into such despair didn’t occur to you when you kicked her out of your camp. You leave the gruesome scene, still shaken by her lifeless expression. You can’t help but think deep down, that this was all your fault.\n\n");
-			{
 			flags[kFLAGS.LUNA_FOLLOWER] = 3;
 			doNext(camp.returnToCampUseOneHour);
+			}
 		}
 		public function fullMoonEventResistWinChainHer():void {
 			clearOutput();
@@ -739,12 +741,5 @@ package classes.Scenes.NPCs
 				}
 			}
 		}
-		/*
-		public function sexMenuSpearPolishing():void {
-			clearOutput();
-			outputText("WIP\n\n");
-			outputText("\"<i>WIP</i>\"\n\n");
-			doNext(talkMenuLuna);
-		}*/
 	}
 }
