@@ -77,12 +77,12 @@ package classes.Scenes.NPCs
 		public function LunaAppearance():void {
 			clearOutput();
 			if (flags[kFLAGS.LUNA_FOLLOWER] < 7) {
-				outputText("Luna is a human maid. She wears the classic maid uniform and bonnet at all times. Her golden eyes always look to you, paying close attention, waiting for any potential orders. That said, her face is not bad to look at and she could pass for cute. Her ashen hair fits her perfectly.\n\n");
-				outputText("Luna’s body looks average, with a modest C cup breast size and generally decent female proportions. Her thighs are about that which you would expect of an ordinary human woman. She wears a pair of tidy black shoes on her delicate feet.\n\n");
+				outputText("Luna is a human maid. She always is wearing the classic maid uniform and bonnet at all times. Her golden eyes are directly planted on you at all times, as she waits for any potential orders. She sports a very cute visage to go with her ashen hair.\n\n");
+				outputText("Luna’s body looks average, with a modest C cup breast size and generally decent female proportions. Her thighs are relatively average for her form. She wears a pair of tidy black shoes on her delicate feet.\n\n");
 			}
 			else {
-				outputText("Luna is a werewolf. While she spends most of the day as a regular human maid, at night or when she’s angry, she turns into a hybrid between human and beast. She normally wears the classic maid uniform and bonnet at all times but prefers to go naked, especially on full moon nights when she risks accidentally destroying her clothes. Her golden eyes ever look at you with attention, waiting for any potential order. ");
-				outputText("You know better and can sometimes spot the flash of a green glow, which is the only warning of the beast within when she assumes human shape. That said, her face is not bad to look at and she could pass for cute, even when she flashes a pair of canines more fitting a wolf than a human or, even that panting tongue of hers. Her ashen hair fits her perfectly, and she makes sure to carefully brush it after a full moon. ");
+				outputText("Luna is a werewolf. While she spends most of the day as a regular human maid, at night or when she’s angry, she turns into a hybrid between human and beast. She normally is wearing her maid uniform but prefers to go naked in this form, especially on full moon nights when she risks accidentally destroying her clothes. Her golden eyes ever look at you with attention with a bit of ferocity, waiting for any potential orders. ");
+				outputText("You know better and can sometimes spot the flash of a green glow, which is the only warning of the beast within when she assumes human shape. Even as a lycan her visage still is cute, even when she flashes a pair of canines more fitting a wolf than a human or, even that panting tongue of hers. Her ashen hair fits her perfectly, and she makes sure to carefully brush it after a full moon. ");
 				outputText("Her ears right now look human but migrate to the top of her head when she assumes beast form.\n\nMost of the time, Luna’s body looks about average with a modest C cup breast size and generally decent female proportions. However, on the night of a full moon, her body changes to a shape more befitting her tainted nature. With DD size breasts and an hourglass shape that would make any jaw drop. ");
 				outputText("Her thighs are about the size that you’d expect of an ordinary human woman, at least when the moon isn’t full. She wears a pair of tidy black shoes on her delicate feet but removes them at night, so as to prevent them from exploding when her feet turn into clawed paws.\n\n");
 			}
@@ -106,7 +106,7 @@ package classes.Scenes.NPCs
 		public function talkMenuLunaHer():void {
 			clearOutput();
 			outputText("How long has she worked as a maid?\n\n");
-			outputText("\"<i>Um... it’s  been a while. I recall entering the service at a very young age and bounced from master to master several times. I don’t think that event at the magic shop counts, however.</i>\"\n\n");
+			outputText("\"<i>Um... it’s been a while. I recall entering in service at a very young age and bounced from master to master several times. I don’t think that event at the magic shop counts, however.</i>\"\n\n");
 			outputText("You don’t push the subject, deciding instead to ask her how it feels to be a maid?\n\n");
 			outputText("\"<i>Wonderful actually! I get a person I get to take care of in every possible way and I get tons of resources to do it. Ah, [name], that smile on my master’s face while eating a perfectly cooked meal, that relieved sigh you make when I ease your rest, that peaceful look in your face when you sleep...</i>\"\n\n");
 			outputText("You are starting to ask yourself whether Luna is a maid, or a complete stalker, but then realise that all of this is also part of her job.");
@@ -133,7 +133,7 @@ package classes.Scenes.NPCs
 				outputText("\"<i>I used to be human. Or rather... well, it’s very complicated.</i>\"\n\n");
 				outputText("You tell her to go on.\n\n");
 				outputText("\"<i>I came from a different world, not unlike this one. After I landed in Mareth by accident while cleaning the shop, I had to survive in the wild. On one night, a werewolf, not unlike me, attacked me and turned me into the monster I am now. I suspect the original werewolves to be demonic creations engineered to spread this magical disease everywhere. ");
-				outputText("I believe the demons intend to replace the various morphs and any remaining humans like me in Mareth with sex crazed animal hybrids.The disease isn’t limited to the form of a wolf either, as I know that there are werecats out there.</i>\"\n\n");
+				outputText("I believe the demons intend to replace the various morphs and any remaining humans like me in Mareth with sex crazed animal hybrids. The disease isn’t limited to the form of a wolf either, as I know that there are werecats out there.</i>\"\n\n");
 			}
 			else {
 				outputText("Are your eyes deceiving you, or is she truly a genuine human?\n\n");
@@ -155,8 +155,8 @@ package classes.Scenes.NPCs
 		public function talkMenuLunaLycanthropy():void {
 			clearOutput();
 			outputText("So what's it exactly like to be a werewolf? Aside from it making you howl at the moon.\n\n");
-			outputText("\"<i>Well, my hormonal system is totally messed up as the lunar cycle causes me to go into heat.The closer we lycanthropes get to the full moon, the hornier we get, until we all turn into sex crazed beasts willing to go so far as to rape innocent people for a good fuck. That said, sex is not all there is to it. We are all gifted with the ability to change form at will, and I know for a fact that we’re also faster, ");
-			outputText("stronger, and sturdier than any normal morph or human. There is no known permanent cure to lycanthropy. The truth is that, while I could change into something different using transformatives, I think that so long as whatever I transform into is an animal I would still go mad during a full moon. Even worse, my bite can turn about anyone into a lycanthrope the same as me.</i>\"\n\n");
+			outputText("\"<i>Well, my hormonal system is totally messed up as the lunar cycle causes me to go into heat. The closer we lycanthropes get to the full moon, the hornier we get, until we all turn into sex crazed beasts willing to go so far as to rape innocent people for a good fuck. That said, sex is not all there is to it. We are all gifted with the ability to change form at will, and I know for a fact that we’re also faster, ");
+			outputText("stronger, and sturdier than any normal morph or human. There is no known permanent cure to lycanthropy. The truth is that, while I could change into something different using transformatives, I think that so long as whatever I transform into is an animal I would still go mad during a full moon. Even worse, my bite can turn about anyone into a lycanthrope like me.</i>\"\n\n");
 			outputText("Guess she really is more than just a cute pup.\n\n");
 			if (flags[kFLAGS.LUNA_FOLLOWER] == 11) flags[kFLAGS.LUNA_FOLLOWER] = 13;
 			else flags[kFLAGS.LUNA_FOLLOWER] = 14;
@@ -177,7 +177,7 @@ package classes.Scenes.NPCs
 			outputText("You don’t mind it, truthfully if this can tie the both of you together better, you will do it all the more. Luna nods and undresses as she changes shape. You hold your arm before her and she lose all form of restraint biting you with just the required strength to draw blood. At first it hurts like crazy but then the pain recedes, replaced with spreading pleasure as the wounds begin to throb. ");
 			outputText("Your" + (player.hasCock() ? " [cock] goes fully erect" : "") + "" + (player.gender == 3 ? " and your" : "") + "" + (player.hasVagina() ? " pussy starts moistening" : "") + " from this weird feeling, something's not right.\n\n");
 			outputText("" + (player.humanScore() < 30 ? "Your body starts changing, and to your surprise, its features warp back to their former human features. You begin to think she may have purged you of the transformations that afflicted you, but that's not exactly it. " : "") + "Heat begins to spread from your wound and you start panting, trying to vent out the pleasure and the hot feeling in your body as something fundamental about you changes.\n\n");
-			outputText("Fur begins to grow on various point of your body, namely your arms and legs. Your nails sharpen and curve, turning into a full set of claws as your hands and feet reshape into 5 digit paws. You groan in pleasure, revealing your forming canines as your spine extends into a furry tail while your ears migrate to the top of your head, covering in fur and changing into triangular points like those of a wolf. You pant in pleasure at the change, revealing a moist dog like tongue");
+			outputText("Fur begins to grow on various point of your body, namely your arms and legs. Your nails sharpen and curve, turning into a full set of claws as your hands and feet reshape into 5-digit paws. You groan in pleasure, revealing your forming canines as your spine extends into a furry tail while your ears migrate to the top of your head, covering in fur and changing into triangular points like those of a wolf. You pant in pleasure at the change, revealing a moist dog like tongue");
 			if (player.hasCock()) outputText(" as you feel a tightness near the base of your cock where your skin seems to be bunching up. A canine-looking sheath begins forming around your cock’s base, tightening and pulling your penis inside its depths. A hot feeling envelops your member as it surges out and starts throbbing, the crown now a point. The sensations are too much for you.  You throw back your head and howl as the transformation completes, your pointed shaft erupting with intense force");
 			outputText(".\n\n");
 			player.lowerBody = LowerBody.WOLF;
@@ -228,12 +228,12 @@ package classes.Scenes.NPCs
 			outputText("\"<i>" + player.mf("Master", "Mistress") + ", we both know it is best not to awaken my instincts during the day. I am a pitiful woman.</i>\"\n\n");
 			outputText("Well it's exactly because she is both strong and dangerous that you need her help to become so yourself.\n\n");
 			outputText("\"<i>If this is the " + player.mf("Master's", "Mistress'") + " wish, I will comply.</i>\"\n\n");
-			outputText("You both head to the ring and get ready for a brawl. She removes her dress and gets stark naked before you " + (camp.companionsCount() >= 2 ? "to the consternation of everyone who’s looking, " : "") + "before starting to pant as she changes shape. You recognise the green glow of crazed desire in her eyes now and almost regret your choice. Losing to her will likely result into you both having sex whether you like it or not.\n\n");
+			outputText("You both head to the ring and get ready for a brawl. She removes her dress and gets stark naked before you " + (camp.companionsCount() >= 2 ? "to the consternation of everyone who’s looking, " : "") + "before starting to pant as she changes shape. You recognize the green glow of crazed desire in her eyes now and almost regret your choice. Losing to her will likely result into you both having sex whether you like it or not.\n\n");
 			startCombat(new Luna());
 		}
 		public function sparLunaWon():void {
 			clearOutput();
-			outputText("Luna sit down like a good well behaved dog to admit defeat.\n\n");
+			outputText("Luna sits down like a good well behaved dog to admit defeat.\n\n");
 			outputText("\"<i>I yield " + player.mf("Master", "Mistress") + ". You win this one. I hope this warm up was worth your time.</i>\"\n\n");
 			outputText("You thank Luna for helping you with your training and give her freedom to resume duty which she gladly do.\n\n");
 			if (flags[kFLAGS.SPARRABLE_NPCS_TRAINING] == 2) {
@@ -280,7 +280,7 @@ package classes.Scenes.NPCs
 			else {
 				outputText("\"<i>Yes, " + player.mf("Master","Mistress") + ", I finished it just in time, just for you. Would you like a cup of tea first?</i>\"\n\n");
 				outputText("You nod and Luna comes back with your meal and drink. It is a mystery as to where and how she finds this food, but she uses her mess kit with such professionalism you can’t help but think many nobles in Tel’Adre don’t eat this well. Finishing your plate, you thank her for the meal, feeling satiated.\n\n");
-				outputText("\"<i>It is my greatest pleasure to serve you a dish everyday, " + player.mf("master","mistress") + ".</i>\"\n\n");
+				outputText("\"<i>It is my greatest pleasure to serve you a dish every day, " + player.mf("master","mistress") + ".</i>\"\n\n");
 				player.hunger = player.maxHunger();
 				HPChange(Math.round(player.maxHP() * .1), true);
 				player.mana += Math.round(player.maxMana() * 0.1);
@@ -311,7 +311,8 @@ package classes.Scenes.NPCs
 			else doNext(camp.returnToCampUseFourHours);
 		}
 		public function nurseLunaEnd():void {
-			outputText("You decide to leave her hanging. If she wants you to fuck her, she will have to do better than that. She’s a little frustrated by your lack of an erotic response, but does not comment on it.");
+			outputText("You decide to leave her hanging. If she wants you to fuck her, she will have to do better than that. She’s a little frustrated by your lack of an erotic response but does not comment on it.");
+			lunaJealousy(5);
 			doNext(camp.returnToCampUseOneHour);
 		}
 		
@@ -381,7 +382,7 @@ package classes.Scenes.NPCs
 				outputText("You are woken up by something forcefully pinning you down. What you see takes you entirely by surprise. Luna is standing over you, staring at you like some kind of predator.\n\n");
 				outputText("\"<i>I can’t hold it anymore, " + player.mf("Master","Mistress") + ". I tried to but the things you do to me... the things I wish you would do to me... it's been intolerable. It's all your fault, after all you pushed me to do this.</i>\"\n\n");
 				outputText("What the hell is she talking about, you’ve done nothing of the sort.\n\n");
-				outputText("\"<i>Oh, but yes you did. Every time you made me cook a meal, every time I healed your wounds my desire for you grew, yet you wouldn’t use me fully... is my body not to your liking, " + player.mf("Master","Mistress") + "? Don’t worry, now that the moon is at its peak I’m finally ready, ready to make you realise how much you love me. You can’t deny us anymore, [name]!</i>\"\n\n");
+				outputText("\"<i>Oh, but yes you did. Every time you made me cook a meal, every time I healed your wounds my desire for you grew, yet you wouldn’t use me fully... is my body not to your liking, " + player.mf("Master","Mistress") + "? Don’t worry, now that the moon is at its peak I’m finally ready. Ready to make you realise how much you love me. You can’t deny us anymore, [name]!</i>\"\n\n");
 				outputText("A green flash appears in her brown eyes as they turn increasingly bestial. Her naked body shivers as fur begins to cover it, her hands and feet turn into paws her irises glow fluorescent green. Fur swiftly cover her arms up to a little under the shoulders and her legs up to the tight. The transformation ends with a bushy tail and a pair of animal ears at the top of her head. ");
 				outputText("She pants in delight at the pleasure of the change, revealing a dog like tongue and canines way too long and sharp to belong on any humans. Just what is she!?\n\n");
 				outputText("\"<i>See? I’m a werewolf, [name]. A fiend created by demonic magic that changes between hybrid and human shape at will. This is the second reason my former master fired me for. I’m a monster. At first I tried to hide it, for your sake, but you’ve been teasing me for so long now I can’t hold it in anymore, especially with the coming full moon.</i>\"\n\n");
@@ -440,7 +441,12 @@ package classes.Scenes.NPCs
 		}
 		public function fullMoonEventResistWinFireHerForest():void {
 			clearOutput();
+			if(player.cor => 70) {
+			outputText("As you explore the forest you come upon a gruesome sight. You thought Luna would've made it back to Tel’Adre but it seems that she didn’t. She’s right there in front of you… hanging from a rope tied to a tree. The crazy bitch hung herself. You leave the gruesome scene, seemingly unphased by the sight. You walk away giddy at the thought that you don't have to deal with her anymore.\n\n");
+			}
+			else {
 			outputText("As you explore the forest you come upon a gruesome sight. You thought Luna would've made it back to Tel’Adre but it seems that she didn’t. She’s right there in front of you… hanging from a rope tied to a tree. That she'd fall into such despair didn’t occur to you when you kicked her out of your camp. You leave the gruesome scene, still shaken by her lifeless expression. You can’t help but think deep down, that this was all your fault.\n\n");
+			{
 			flags[kFLAGS.LUNA_FOLLOWER] = 3;
 			doNext(camp.returnToCampUseOneHour);
 		}
@@ -596,9 +602,9 @@ package classes.Scenes.NPCs
 			outputText("Luna takes you to the hilt, calmly sucking your meat before pulling back to the tip and plunging down, engulfing all length again.");
 			if (player.cocks[x].cockLength >= 7) outputText(" Hitting the back of her throat, Luna pulls back slightly then pushes forward, forcing your cock into her tight throat and hilting all [cock] in her velvety confines before pulling back to the tip of your cock and plunging down engulfing all length again.");
 			outputText("\n\nYou moan and groan, immensely enjoying her ministrations. You place a hand atop her head to guide her as she begins speeding up. Your knees begin feeling weak as she pleasures you, the rapid movements of her head and heat of her moist mouth is almost too much to bear for you. Muttering a quick warning, your cock throbs with your impending release and a few more moments you explode. Luna takes you to the hilt in her mouth again, making sure to drink down every bit of your delicious spooge");
-			if (player.cocks.length > 1) outputText(" while your other tool" + (player.cocks.length == 2 ? "" : "s") + " unload their payloads");
+			if (player.cocks.length > 1) outputText(" while your other tool" + (player.cocks.length == 2 ? "" : "s") + " unloads it's own payload");
 			outputText(".\n\nMaking sure that she’s swallowed every last bit of cum");
-			if (player.cumQ() >= 2000) outputText(", your massive load making her look a couple months into pregnancy (end)");
+			if (player.cumQ() >= 2000) outputText(", your massive load making her look a couple months pregnant (end)");
 			else if (player.cumQ() >= 1000) outputText(", her belly slightly inflated from the impressive load you just fed her");
 			outputText(", she pulls back and bows her head.\n\n");
 			outputText("\"<i>Was that pleasing, " + player.mf("Master","Mistress") + "?</i>\" You pat her on the head and tell her it was magnificent, thanking her for the pleasant session.\n\n");
@@ -657,7 +663,7 @@ package classes.Scenes.NPCs
 			outputText(" Luna’s own tail is out and is busy circling your anal ring with its tip which only drives you crazier.\n\n");
 			outputText("Their combined affection and skill eventually make short work of your restraint; " + (player.cocks.length > 1 ? "you pull out of their holes, " : "") + "cum flowing " + (player.balls > 0 ? "out of your balls and " : "") + "through your [cock], splattering the space between them up to their combined breasts with a massive load of semen. Fully satisfied, the pair lick their lips as they untangle from your cock, a large puddle forming on the ground. ");
 			outputText("They head for the spring to clean themselves giving you a pair of playful winks before leaving you to rest. Well, now that you think of it, they both won and you lost. But who cares; what a good time you had!\n\n");
-			outputText("You decide to take a nap to recover some energy. A few hour later, you wake up ready to resume adventuring.\n\n");
+			outputText("You decide to take a nap to recover some energy. A few hours later, you wake up ready to resume adventuring.\n\n");
 			lunaJealousy(-50);
 			lunaAffection(2);
 			player.orgasm();

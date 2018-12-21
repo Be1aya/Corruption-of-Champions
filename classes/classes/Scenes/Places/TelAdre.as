@@ -181,8 +181,8 @@ public function telAdreMenu():void {
 		maddie.runAwayMaddieFollowup();
 		return;
 	}
-	if (flags[kFLAGS.LUNA_FOLLOWER] < 2 && rand(10) == 0) {
-		if (flags[kFLAGS.LUNA_FOLLOWER] == 1) meetingLunaRepated();
+	if (flags[kFLAGS.LUNA_FOLLOWER] < 2 && rand(10) == 0 && flags[kFLAGS.LUNA_DISABLED] != 1) {
+		if (flags[kFLAGS.LUNA_FOLLOWER] == 1 && flags[kFLAGS.LUNA_DISABLED] != 1) meetingLunaRepated();
 		else meetingLunaFirstTime();
 		return;
 	}
@@ -1285,10 +1285,16 @@ public function meetingLunaFirstTime():void {
 	menu();
 	addButton(0, "Help", meetingLunaFirstTimeHelp);
 	addButton(1, "Leave", meetingLunaFirstTimeLeave);
+	addButton(2, "Never Help", meetingLunaFirstTimeNever);
 }
 public function meetingLunaFirstTimeLeave():void {
 	outputText("Sadly you see no way you could help her out. You leave, wishing her the best of luck.\n\n");
 	flags[kFLAGS.LUNA_FOLLOWER] = 1;
+	doNext(telAdreMenu);
+}
+public function meetingLunaFirstTimeNever():void {
+	outputText("Sadly you see no way you could help her out. You leave, wishing her the best of luck and seeking out to never run into her again.\n\n");
+	flags[kFLAGS.LUNA_DISABLED] = 1;
 	doNext(telAdreMenu);
 }
 public function meetingLunaFirstTimeHelp():void {
@@ -1303,9 +1309,15 @@ public function meetingLunaRepated():void {
 	menu();
 	addButton(0, "Yes", meetingLunaRepatedYes);
 	addButton(1, "No", meetingLunaRepatedNo);
+	addButton(2, "Never Help", meetingLunaRepatedNever);
 }
 public function meetingLunaRepatedNo():void {
 	outputText("There is nothing you can do for her. You leave her be, for now.\n\n");
+	doNext(telAdreMenu);
+}
+public function meetingLunaRepatedNever():void {
+	outputText("There is nothing you can do for her and wish her luck on her future endeavors. You leave her be, for good.\n\n");
+	flags[kFLAGS.LUNA_DISABLED] = 1;
 	doNext(telAdreMenu);
 }
 public function meetingLunaRepatedYes():void {
