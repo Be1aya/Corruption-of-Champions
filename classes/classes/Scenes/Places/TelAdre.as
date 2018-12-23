@@ -1139,6 +1139,8 @@ private function buyGymLifeTimeMembership():void {
 private function weightLifting():void {
 	clearOutput();
 	//Too tired?  Fuck off.
+	var maxes:Object = player.getAllMaxStats();
+	//Call this also, because it's dum that this is capped at 90 str.
 	if(player.fatigue > player.maxFatigue() - 25) {
 		outputText("<b>There's no way you could exercise right now - you're exhausted!</b>  ");
 		if(flags[kFLAGS.LIFETIME_GYM_MEMBER] == 0) outputText("It'd be better to save your money and come back after you've rested.");
@@ -1164,11 +1166,15 @@ private function weightLifting():void {
 	else if(player.str < 80) outputText("You confidently grab the heaviest dumbbells in the place and heft them.  It doesn't take long for you to work up a lather of sweat and feel the burn thrumming through your slowly tiring form.  The workout takes about an hour, but you feel you made some good progress today.");
 	//(<90)
 	else if(player.str < 90) outputText("You grab the heaviest weights they have and launch into an exercise routine that leaves you panting from exertion.  Setting the weights aside, you flex and marvel at yourself – you could probably arm wrestle a minotaur or two and come out victorious!");
+	//gain stats until you reach the player strength cap
+	else if(player.str > 90 &&  player.str < maxes.str) outputText("This place doesn't have much to challenge you at this point, but it looks like you grab some of the heaviest weights and begin stacking them just to get a challenge out of it. In the hour, you've managed to get quite a few looks from the fellow patrons while having worked up such an intense sweat that you're practically soaked.");
 	//(else)
 	else outputText("This place barely has anything left to challenge you, but you take the heaviest weights you can get your mitts on and get to it.  By the time an hour has passed, you've worked up a good sweat, but without heavier weights you probably won't get any stronger.");
 	//Stat changes HERE!
 	if(player.str < 90) dynStats("str", .5);
 	if(player.tou < 40) dynStats("tou", .3);
+	if(player.str > 90 &&  player.str < maxes.str) dynStats("str", 2.5);
+	if(player.tou > 90 &&  player.tou < maxes.tou) dynStats("tou", 2.3);
 	//Body changes here
 	//Muscleness boost!
 	outputText(player.modTone(85,5+rand(5)));
@@ -1189,6 +1195,7 @@ private function weightLifting():void {
 
 private function goJogging():void {
 	clearOutput();
+	var maxes:Object = player.getAllMaxStats();
 	//Too tired?  Fuck off.
 	if(player.fatigue > player.maxFatigue() - 30) {
 		outputText("<b>There's no way you could exercise right now - you're exhausted!</b>  ");
@@ -1215,11 +1222,15 @@ private function goJogging():void {
 	else if(player.tou < 80) outputText("and it doesn't faze you in the slightest.  You run lap after lap at a decent clip, working yourself until you're soaked with sweat and fairly tired.");
 	//(<90 tou)
 	else if(player.tou < 90) outputText("and you have a terrific time.  You can keep yourself just below your sprinting speed for the entire time, though you work up a huge amount of sweat in the process.");
+	// stronger than 90 but still below max cap
+	else if(player.tou > 90 &&  player.str < maxes.tou) outputText("you're on cloud nine. You are able to keep yourself at a full on sprint the entire time, feeling a centaur running straight through an open field, working up an intense amount of sweat that you're intensely slick from head to toe.");
 	//else)
 	else outputText("and it barely challenges you.  You run at a sprint half the time and still don't feel like you're improving in the slightest.  Still, you do manage to burn a lot of calories.");
 	//Stat changes HERE!
 	if(player.spe < 40) dynStats("spe", .3);
 	if(player.tou < 90) dynStats("tou", .5);
+	if(player.spe > 90 &&  player.spe < maxes.spe) dynStats("str", 2.5);
+	if(player.tou > 90 &&  player.tou < maxes.tou) dynStats("tou", 2.3);
 
 	//If butt is over 15 guaranteed reduction
 	if(player.butt.type >= 15) {
