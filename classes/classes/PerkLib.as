@@ -75,39 +75,39 @@ public class PerkLib
 		
 		// Ascension Rare perks
 		public static const AscensionAdditionalOrganMutation01:PerkType = mk("Ascension: Additional Organ Mutation (1st Stage)", "Ascension: Additional Organ Mutation (1st Stage)",
-				"Numerous internal mutation changed your body to allow handle 2nd mutation of the same organ/internal body part.");
+				"Numerous internal mutations changed your body to allow an additional mutation of the same organ/internal body part.");
 		public static const AscensionBuildingPrestige01:PerkType = mk("Ascension: Building Prestige (1st Stage)", "Ascension: Building Prestige (1st Stage)",
-				"Your understanding of prestige jobs from previous life allows to pick 2nd one at lvl 42+.");
+				"Your understanding of prestige jobs from your previous life allows you pick another one at lvl 42+.");
 		public static const AscensionBuildingPrestige02:PerkType = mk("Ascension: Building Prestige (2nd Stage)", "Ascension: Building Prestige (2nd Stage)",
-				"Your understanding of prestige jobs from previous life allows to pick 3rd one at lvl 42+.");
+				"Your understanding of prestige jobs from your previous life allows to pick a third job at lvl 42+.");
 		public static const AscensionBuildingPrestige03:PerkType = mk("Ascension: Building Prestige (3rd Stage)", "Ascension: Building Prestige (3rd Stage)",
-				"Your understanding of prestige jobs from previous life allows to pick 4th one at lvl 42+.");
+				"Your understanding of prestige jobs from your previous life allows to pick a fourth job at lvl 42+.");
 		public static const AscensionBuildingPrestige04:PerkType = mk("Ascension: Building Prestige (4th Stage)", "Ascension: Building Prestige (4th Stage)",
-				"Your understanding of prestige jobs from previous life allows to pick 5th one at lvl 42+.");
+				"Your understanding of prestige jobs from your previous life allows to pick a fifth job at lvl 42+.");
 		public static const AscensionCruelChimerasThesis:PerkType = mk("Ascension: Cruel Chimera's Thesis", "Ascension: Cruel Chimera's Thesis",
-				"Allows you to reduce by another one point needed to accumulate mutations into non-human species to attain race specific enhancing effects.");
+				"Reduces racial score requirements to attain race special abilities.");
 		public static const AscensionHerosHeritage:PerkType = mk("Ascension: Hero's Heritage", "Ascension: Hero's Heritage",
-				"After reincarnation you ended in body of local hero descendant possesing much more firm body and resolve giving you a slight easier start of your quest in Mareth.");
+				"After reincarnation you came back as the descendant of a well known hero of Ingnam. Increases starting stats when restoring from ascension.");
 		public static const AscensionHerosLineage:PerkType = mk("Ascension: Hero's Lineage", "Ascension: Hero's Lineage",
-				"Body in which you ends up after next incarnation have much more thicker hero lineage than before giving you even better start before venturing into Mareth. You would probably need it.");
+				"After reincarnation you came back as the descendant of a well known hero of Ingnam, this one has a much thicker lineage. Additionally increases starting stats when restoring from ascension.");
 		public static const AscensionHybridTheory:PerkType = mk("Ascension: Hybrid Theory", "Ascension: Hybrid Theory",
-				"Allows you to reduce by one needed to accumulate mutations into non-human species to attain race specific enhancing effects.");
+				"Reduces racial score requirements to attain race special abilities.");
 		public static const AscensionNaturalMetamorph:PerkType = mk("Ascension: Natural Metamorph", "Ascension: Natural Metamorph",
-				"When others needs to work hard on unlocking their metamorph potential you never had to do it. Whatever the reason for that is... truth be told you try not to think about it, affraid of what it might mean for you. You do not want to care about it as long as it's nothing harmfull for you in the long run.");
+				"When others needed to work hard on unlocking their metamorph potential you never needed to do it. Whatever the reason for that is... it doesn't matter! Unlocks Metamorphing from inital game start.");
 		public static const AscensionTranscendentalGeneticMemoryStage1:PerkType = mk("Ascension: Transcendental Genetic Memory (Stage 1)", "Ascension: Transcendental Genetic Memory (Stage 1)",
-				"Allows to retain up to 10 choosen unlocked metamorph options.");
+				"Allows you to retain up to 10 choosen unlocked metamorph options.");
 		public static const AscensionTranscendentalGeneticMemoryStage2:PerkType = mk("Ascension: Transcendental Genetic Memory (Stage 2)", "Ascension: Transcendental Genetic Memory (Stage 2)",
-				"Allows to retain up to 20 choosen unlocked metamorph options.");
+				"Allows you to retain up to 20 choosen unlocked metamorph options.");
 		public static const AscensionTranscendentalGeneticMemoryStage3:PerkType = mk("Ascension: Transcendental Genetic Memory (Stage 3)", "Ascension: Transcendental Genetic Memory (Stage 3)",
-				"Allows to retain up to 30 choosen unlocked metamorph options.");
+				"Allows you to retain up to 30 choosen unlocked metamorph options.");
 		public static const AscensionTranscendentalGeneticMemoryStage4:PerkType = mk("Ascension: Transcendental Genetic Memory (Stage 4)", "Ascension: Transcendental Genetic Memory (Stage 4)",
-				"Allows to retain up to 40 choosen unlocked metamorph options.");
+				"Allows you to retain up to 40 choosen unlocked metamorph options.");
 		public static const AscensionUnderdog:PerkType = mk("Ascension: Underdog", "Ascension: Underdog",
-				"You're underdog. Gains twice more exp for beating up enemies above your current level with doubled limit after which increase to gained exp stops.");// Also allow to use 'accidentally' finding all forgotten or hidden legacies from times before the demon invasion.");
+				"You're the biggest underdog ever! Gain twice as much experience for defeating enemies above your current level with a doubled limit before the boost to gained experience stops.");// Also allow to use 'accidentally' finding all forgotten or hidden legacies from times before the demon invasion.");
 		public static const AscensionUnlockedPotential:PerkType = mk("Ascension: Unlocked Potential", "Ascension: Unlocked Potential",
-				"Due to reincarnation experience your body becoming strong faster than in previous life (increased passive hp, lust, fatigue gains at lvl-up).");
+				"Due to experience with reincarnation your body becomes stronger faster than in your previous lives (increased passive HP, maximum lust and maximum fatigue gains at level up).");
 		public static const AscensionUnlockedPotential2ndStage:PerkType = mk("Ascension: Unlocked Potential (2nd Stage)", "Ascension: Unlocked Potential (2nd Stage)",
-				"Due to reincarnation experience your body becoming strong faster than in previous life (increased passive wrath, mana, soulforce gains at lvl-up).");
+				"Due to experience with reincarnation your body becomes stronger faster than in your previous lives almost twice as much (2x increased passive HP, maximum lust and maximum fatigue gains at level up).");
 	//	public static const AscensionTranscendentalGeneticMemoryStage5:PerkType = mk("Ascension: Transcendental Genetic Memory (Stage 5)", "Ascension: Transcendental Genetic Memory (Stage 5)",
 	//	public static const AscensionAdditionalOrganMutation02:PerkType = mk("Ascension: Additional Organ Mutation (2nd Stage)", "Ascension: Additional Organ Mutation (2nd Stage)",
 	//			"Numerous internal mutation changed your body to allow handle 3rd mutation of the same organ/internal body part.");
@@ -127,13 +127,13 @@ public class PerkLib
 		
 		// History perks
 		public static const HistoryAlchemist:PerkType = mk("History: Alchemist", "History: Alchemist",
-				"Alchemical experience makes items more reactive to your body.");
+				"Alchemical experience makes transformative items more reactive to your body.");
 		public static const PastLifeAlchemist:PerkType = mk("Past Life: Alchemist", "Past Life: Alchemist",
-				"Alchemical experience makes items more reactive to your body.", null, true);
+				"Alchemical experience makes transformative items more reactive to your body.", null, true);
 		public static const HistoryCultivator:PerkType = mk("History: Cultivator", "History: Cultivator",
-				"Soulforce is easier to kept giving you 10% increase to it maximum amount.");
+				"A natural attraction to Soulforce leaves you with an ability to begin with a 10% increase to the maximum amount you can store.");
 		public static const PastLifeCultivator:PerkType = mk("Past Life: Cultivator", "Past Life: Cultivator",
-				"Soulforce is easier to kept giving you 10% increase to it maximum amount.", null, true);
+				"A natural attraction to Soulforce in a past life leaves you with an ability to begin with a 10% increase to the maximum amount you can store.", null, true);
 		public static const HistoryFighter:PerkType = mk("History: Fighter", "History: Fighter",
 				"A Past full of conflict increases physical melee damage dealt by 10%.");
 		public static const PastLifeFighter:PerkType = mk("Past Life: Fighter", "Past Life: Fighter",
@@ -155,9 +155,9 @@ public class PerkLib
 		public static const PastLifeScholar:PerkType = mk("Past Life: Scholar", "Past Life: Scholar",
 				"Time spent focusing your mind makes spellcasting use 20% less mana.", null, true);
 		public static const HistoryScout:PerkType = mk("History: Scout", "History: Scout",
-				"A Past full of archery training increases physical range damage dealt by 10% and acc by 20%.");
+				"A Past full of archery training increases ranged damage dealt by 10% and accuracy by 20%.");
 		public static const PastLifeScout:PerkType = mk("Past Life: Scout", "Past Life: Scout",
-				"A Past full of archery training increases physical range damage dealt by 10% and acc by 20%.", null, true);
+				"A Past full of archery training increases ranged range damage dealt by 10% and accuracy by 20%.", null, true);
 		public static const HistorySlacker:PerkType = mk("History: Slacker", "History: Slacker",
 				"Regenerate fatigue 20% faster.");
 		public static const PastLifeSlacker:PerkType = mk("Past Life: Slacker", "Past Life: Slacker",
@@ -216,13 +216,13 @@ public class PerkLib
 				"Boosts armor points by a portion of your speed on light/medium armors.",
 				"You choose the 'Agility' perk, increasing the effectiveness of Light/Medium armors by a portion of your speed.");
 		public static const AnatomyExpert:PerkType = mk("Anatomy expert", "Anatomy expert",
-				"Your continued study of your opponents anatomy granted you insight to their weak point allowing you to strike precisely where it will hurt the most for increased critical chances and damage with thrown weapon. (+10% crit chance and +50% crit dmg)",
-				"You choose the 'Anatomy expert' perk. Your continued study of your opponents anatomy granted you insight to their weak point allowing you to strike precisely where it will hurt the most for increased critical chances and damage with thrown weapon. (+10% crit chance and +50% crit dmg)");
+				"Your continued study of your opponents anatomy granted you insight on their weak points allowing you to strike precisely where it will hurt the most for increased critical chance and damage with thrown weapons. (+10% crit chance and +50% crit dmg)",
+				"You choose the 'Anatomy expert' perk. Your continued study of your opponents anatomy granted you insight on their weak points allowing you to strike precisely where it will hurt the most for increased critical chance and damage with thrown weapons. (+10% crit chance and +50% crit dmg)");
 		public static const Anger:PerkType = mk("Anger", "Anger",
 				"For every 1% of missing HP you gain 1% bonus damage.",
 				"You choose the 'Anger' perk, increasing damage based on your missing HP.");
 		public static const ApprenticeGolemMaker:PerkType = mk("Apprentice Golem Maker", "Apprentice Golem Maker",
-				"Your proficiency in making golems allows to decrease by 10 mana cost of their creation, lower by 5% chance of core shattering and storing more golems.",
+				"Your proficiency in making golems allows you to preform it more efficently, decreasing Mana costs by 10 when creating them, allow you to store more and lowers the chances of cores shattering by 5%.",
 				"You choose 'Apprentice Golem Maker' perk, increasing your proficiency in making golems.");
 		public static const ArcanePoolI:PerkType = mk("Arcane Pool I", "Arcane Pool I",
 				"+1 extra mana per point of intelligence and wisdom.",
@@ -1381,10 +1381,10 @@ public class PerkLib
 				"Increase by (10 * NG tier) boost of speed for a five hours longer after an intake of cum and increase max Hunger cap by 50 (if PC have Hunger bar active).",
 				"You choose the 'Manticore Metabolism (Evolved)' perk, allows you to increase max boost of speed after an intake of cum and keeping it for 50% longer.");
 		public static const MantislikeAgility:PerkType = mk("Mantis-like Agility", "Mantis-like Agility",
-				"Your altered musculature allows to increase your natural agility and speed. If somehow you would have some type of natural armor or even thicker skin this increase could be even greater...",
+				"Your altered musculature increases your natural agility and speed. If somehow you would have some type of natural armor or even thicker skin this increase could be even greater...",
 				"You choose the 'Mantis-like Agility' perk, by becoming much more mantis-like your body musculature started to slowly adapt to existance of exoskeleton.");
 		public static const MantislikeAgilityEvolved:PerkType = mk("Mantis-like Agility (Evolved)", "Mantis-like Agility (Evolved)",
-				"Your evolved musculature providing you with even higher increase to agility and speed. If somehow you would have some type of natural armor or even thicker skin this increase would be even bigger.",
+				"Your evolved musculature further brings you an even higher increase to agility and speed. If somehow you would have some type of natural armor or even thicker skin this increase would be even bigger.",
 				"You choose the 'Mantis-like Agility (Evolved)' perk, by becoming much more mantis-like your body musculature started to slowly adapt to existance of exoskeleton.");
 		public static const Manyshot:PerkType = mk("Manyshot", "Manyshot",
 				"You always shoot two arrows instead of one on your first strike.",
@@ -1424,14 +1424,14 @@ public class PerkLib
 				"+2 extra mana per point of intelligence.",
 				"You choose the 'Mind over Body VI' perk, granting +2 extra maximum mana for each point of intelligence.");
 		public static const MinotaurTesticles:PerkType = mk("Minotaur Testicles", "Minotaur Testicles",
-				"Allow keep Cum Cannon special even if minotaur score is lower than 9. Additionaly your max Lust increase by 10.",
-				"You choose the 'Minotaur Testicles' perk. Interaction between pernament body alteration from Bro Brew (maybe Bimbo Liquer too) and your minotaur nature allows you to keep minotaur racial special even if you stop been bull-like.");
+				"Allow keep Cum Cannon special even if minotaur score is lower than 9. Additionaly your max Lust is increased by 10.",
+				"You choose the 'Minotaur Testicles' perk. Prolonged transformation into a minotaur allows you to keep minotaur racial special even if you transform from being one.");
 		public static const MinotaurTesticlesEvolved:PerkType = mk("Minotaur Testicles (Evolved)", "Minotaur Testicles (Evolved)",
-				"+5% to lust resistance, increase cum output by 200 mLs and +10 to max libido (scalable).",
-				"You choose the 'Minotaur Testicles (Evolved)' perk. Granting more lust resistance, increase slight cum output and boost to max libido.");
+				"+5% to lust resistance, increases cum output by 200 mLs and +10 to max libido (scalable).",
+				"You choose the 'Minotaur Testicles (Evolved)' perk. Grants more lust resistance, increase slight cum production boost and boost to max libido.");
 		public static const MinotaurTesticlesFinalForm:PerkType = mk("Minotaur Testicles (Final Form)", "Minotaur Testicles (Final Form)",
-				"+5 to max tou an +10 to max str/lib, increase cum production by ~100%, +90 to max lust and Cum Cannon cost rise to 200 lust but can be used more than once per fight.",
-				"You choose the 'Minotaur Testicles (Final Form)' perk. Granting boost to max speed/libido/lust, increase cum output and allowing using Cum Cannon more than once per fight.");
+				"+5 to max Toughness an +10 to max strength/libido, increases cum production by ~100%, +90 to max lust and Cum Cannon cost increased to 200 lust but can be used more than once per fight.",
+				"You choose the 'Minotaur Testicles (Final Form)' perk. Your testicles have fully evolved into to full virility of the Minotaur, granting a boost to your max speed/libido/lust, increase cum production by 100% and allowing using Cum Cannon more than once per fight at the cost of requiring 200 lust.");
 		public static const MultiClawAttack:PerkType = mk("Multi Claw Attack", "Multi Claw Attack",
 				"When attacking with your claws, add an additional attack striking up to 4 times.",
 				"You choose the 'Multi Claw Attack' perk, gaining an additional attack with your claws!");
@@ -1448,7 +1448,7 @@ public class PerkLib
 				"Increases maximum fatigue by 20000.",
 				"You choose the 'Mythical Endurance' perk. Thanks to your mythical physical conditioning, your maximum fatigue has been increased by 20000!");
 		public static const MythicalGolemMaker:PerkType = mk("Mythical Golem Maker", "Mythical Golem Maker",
-				"Your proficiency in making golems allows to make stronger golems as much stronger their creator became and slightly rise your intelligence and wisdom.",
+				"Your proficiency in making golems allows to make stronger golems as stronger as their creator became and slightly rises your intelligence and wisdom.",
 				"You choose 'Mythical Golem Maker' perk, increasing your proficiency in making golems.");
 		public static const MythicalIntelligence:PerkType = mk("Mythical Intelligence", "Mythical Intelligence",
 				"Increases maximum intelligence by 65 + 15 * NG tier.",
@@ -1544,7 +1544,7 @@ public class PerkLib
 				"Your altered musculature continue to increase your natural strenght and tone gained from previous change. Oni Rampage and Drunker Power req. only 3+ pts in Oni score and dmg multi from Oni Rampage increased to 4x.",
 				"You choose the 'Oni Musculature' perk. Your changing musculature giving you boost to oni-related specials.");
 		public static const OniMusculatureFinalForm:PerkType = mk("Oni Musculature (Final Form)", "Oni Musculature (Final Form)",
-				"Your altered musculature increased again your natural strenght and tone limit. Dmg multi from Oni Rampage increased to 6x, it duration increased by 3 turns and cooldown decreased by 3 turns. Drunken Power boost",
+				"Your altered musculature increased again your natural strength and muscle tone limit. Damage multiplier from Oni Rampage increased to 6x, it's duration is increased by 3 turns and cooldown decreased by 3 turns. Drunken Power boost",
 				"You choose the 'Oni Musculature (Final Form)' perk. Your oni musculature changes boosted your oni specials once again.");
 		public static const Parry:PerkType = mk("Parry", "Parry",
 				"[if(player.spe>=50)" +
