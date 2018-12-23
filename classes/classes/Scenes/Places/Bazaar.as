@@ -52,7 +52,7 @@ private function approachBazaarGuard():void {
 	if(player.cor < 33 - player.corruptionTolerance() && flags[kFLAGS.MEANINGLESS_CORRUPTION] <= 0) outputText("Leave at once.  You are not yet ready for the wonders of the Bazaar.");
 	else outputText("Welcome to the Bizarre Bazaar.  Enter, but be mindful of your actions within.");
 	outputText("</i>\"");
-	if(player.cor < 33 - player.corruptionTolerance() && flags[kFLAGS.MEANINGLESS_CORRUPTION] <= 0) simpleChoices("FIGHT!",initiateFightGuard, "", null, "", null, "", null, "Leave",camp.returnToCampUseOneHour);
+	if(player.cor < 33 - player.corruptionTolerance() && flags[kFLAGS.MEANINGLESS_CORRUPTION] <= 0) simpleChoices("FIGHT!",initiateFightGuard, "Bribe", bribeTheGuard, "", null, "", null, "Leave",camp.returnToCampUseOneHour);
 	else simpleChoices("Enter",enterTheBazaar, "", null, "", null, "", null, "Leave",camp.returnToCampUseOneHour);
 }
 
@@ -73,6 +73,27 @@ public function initiateFightGuard():void {
 	outputText("You ready your [weapon] and assume a combat stance! He grabs his dual scimitars! It's a fight!");
 	startCombat(new BazaarGatekeeper());
 }	
+//Now now, we don't have to be so barbaric if we have coin!
+public function bribeTheGuard():void {
+	clearOutput();
+	outputText("You lean up towards the guard with a handful of gems to let you on through..");
+	if (player.gems >= 250)
+	{
+		outputText("\n And sure enough, it seems that did it. He takes them from your hand and inspects them for a moment before letting you on by, \"<i>");
+		outputText("Welcome to the Bizarre Bazaar.  Enter, but be mindful of your actions within.");
+		outputText("</i>\"");
+		player.gems -= 250;
+		simpleChoices("Enter",enterTheBazaar, "", null, "", null, "", null, "", null);
+	}
+	else 
+	{
+		outputText("\n The guard glares at you suddenly and shoves you back with his dual scimitars up to fight. \"<i>");
+		outputText("Looks like I need to take out the gutter trash.");
+		outputText("</i>\"");
+		outputText("\nYou ready your [weapon] and assume a combat stance! It's a fight!");
+		startCombat(new BazaarGatekeeper());
+	}
+}
 
 public function winAgainstGuard():void {
 	clearOutput();
@@ -468,6 +489,7 @@ private function suckOffJoeysGardenHose():void {
 	outputText("\"<i>I cleaned out your balls; you can clean up the floor,</i>\" you joke as you leave, kissing him one last time on the mouth before you go.\n\n");
 	outputText("Joey blushes again and begins looking for a mop.");
 	dynStats("lus", 70);
+	player.refillHunger(100); // might as well fill out hunger too, strange this was never accounted for.
 	doNext(camp.returnToCampUseOneHour);
 }
 
@@ -1237,6 +1259,7 @@ private function finalGayFinallee(road:int = 0):void {
 		model.time.hours = 6;
 		//Lust sated
 		//Gained 1 lust draft, lost a few gems(9 or so?)
+		player.refillHunger(100);
 		inventory.takeItem(consumables.L_DRAFT, camp.returnToCampUseOneHour);
 		//Time set to morning
 		statScreenRefresh();
@@ -1269,6 +1292,7 @@ private function finalGayFinallee(road:int = 0):void {
 		model.time.hours = 6;
 		//Lust sated
 		//Gained 1 lust draft, lost a few gems(9 or so?)
+		player.refillHunger(100);
 		inventory.takeItem(consumables.L_DRAFT, camp.returnToCampUseOneHour);
 		//Time set to morning
 		statScreenRefresh();
