@@ -17,6 +17,7 @@ import classes.Scenes.Monsters.*;
 import classes.Scenes.NPCs.EvangelineFollower;
 import classes.Scenes.NPCs.RyuBiDragon;
 import classes.Scenes.Places.HeXinDao;
+import classes.Items.*;
 
 //import classes.Scenes.Areas.nazwa lokacji;
 	//import classes.Scenes.Areas.nazwa lokacji;
@@ -736,8 +737,14 @@ public class Exploration extends BaseContent
 			clearOutput();
 			var x:Number = player.longestCock();
 			//PARAGRAPH 1
-			outputText("Walking along the sandy dunes of the desert you find yourself increasingly impeded by the bulk of your " + cockDescript(x) + " dragging along the sandscape behind you.  The incredibly hot surface of the desert causes your loins to sweat heavily and fills them with relentless heat.");
-
+			if (player.lowerGarment != UndergarmentLib.NOTHING)
+			{
+				outputText("Walking along the sandy dunes of the desert you find yourself increasingly impeded by the bulk of your [lowerGarment] straining to contain your " + cockDescript(x) + " as it dragged along the sandscape behind you.  The incredibly hot surface of the desert causes your covered loins to be matted with sweat heavily and cooking with the relentless heat of the desert.");
+			}
+			else
+			{
+				outputText("Walking along the sandy dunes of the desert you find yourself increasingly impeded by the bulk of your " + cockDescript(x) + " dragging along the sandscape behind you.  The incredibly hot surface of the desert causes your loins to sweat heavily and fills them with relentless heat.");
+			}
 			if (player.cocks.length == 1) outputText("  As it drags along the dunes, the sensation forces you to imagine the rough textured tongue of a monstrous animal sliding along the head of your " + Appearance.cockNoun(player.cocks[x].cockType) + ".");
 			else if (player.cocks.length >= 2) outputText("  With all of your [cocks] dragging through the sands they begin feeling as if the rough textured tongues of " + num2Text(player.cockTotal()) + " different monstrous animals were slobbering over each one.");
 			outputText("\n\n");
