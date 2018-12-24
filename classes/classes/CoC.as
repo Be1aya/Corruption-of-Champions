@@ -8,8 +8,7 @@ import classes.Scenes.NPCs.JojoScene;o alter the
 import classes.Scenes.SceneLib;ese imports until more is known about what needs to load and when.
 */
 
-package classes
-{
+package classes {
 // BREAKING ALL THE RULES.
 import classes.GlobalFlags.kACHIEVEMENTS;
 import classes.GlobalFlags.kCOUNTERS;
@@ -24,7 +23,7 @@ import classes.display.PerkMenu;
 import classes.display.SpriteDb;
 import classes.internals.CountersStorage;
 import classes.internals.RootCounters;
-
+	
 import coc.model.GameModel;
 import coc.model.TimeModel;
 import coc.view.MainView;
