@@ -1229,7 +1229,7 @@ private function goJogging():void {
 	//Stat changes HERE!
 	if(player.spe < 40) dynStats("spe", .3);
 	if(player.tou < 90) dynStats("tou", .5);
-	if(player.spe > 90 &&  player.spe < maxes.spe) dynStats("str", 2.5);
+	if(player.spe > 90 &&  player.spe < maxes.spe) dynStats("spe", 2.5);
 	if(player.tou > 90 &&  player.tou < maxes.tou) dynStats("tou", 2.3);
 
 	//If butt is over 15 guaranteed reduction
