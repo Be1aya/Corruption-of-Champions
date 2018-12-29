@@ -831,7 +831,7 @@ if (CoC.instance.model.time.hours > 23) { //Once per day
 				}
 			}
 			else if (player.findPerk(PerkLib.LizanRegeneration) >= 0 && player.perkv4(PerkLib.LizanRegeneration) == 0 && player.findPerk(PerkLib.LizanMarrow) < 0) { //Remove lizan regeneration perk if not meeting requirements
-				outputText("\nAll of sudden something change inside your body.  You think about a long while, until it dawned on you.  You can't feel that refreshing feeling inside your body anymore meaning for now just human rate of recovery from all kind of injuries.\n\n(<b>Lost Perk: Lizan Regeneration</b>)");
+				outputText("\nSomething feels off about you.  You sit and think for awhile while you hang around in camp, idly carving wood decor in camp when you cut one of your fingers, you notice it doesn't quite heal near instantly. You just can't feel that rapid regenerating feeling inside your body anymore. Looks like you're back to normal longer healing for now.\n\n(<b>Lost Perk: Lizan Regeneration</b>)");
 				player.removePerk(PerkLib.LizanRegeneration);
 				needNext = true;
 			}
@@ -956,8 +956,9 @@ if (CoC.instance.model.time.hours > 23) { //Once per day
 			}
 			//Soul Sense
 			if (player.maxSoulforce() >= 200 && player.findPerk(PerkLib.SoulApprentice) >= 0 && player.findPerk(PerkLib.SoulSense) < 0) {
-				outputText("\nDuring a casual walk around your camp you suddenly notice, or rather feel, something unexpected. Your surrounding blurs for a moment, to be replaced with a forest. You notice a goblin strolling nearby. Suddenly, she stops and slowly looks around, staring directly at you. A moment later, your vision of the forest becomes blurry, eventually fading away to be replaced by your camp and its surroundings. ");
+				outputText("\nDuring a casual walk around your camp you suddenly notice, or rather feel, something unexpected. Your surrounding blurs for a moment, suddenly replaced with a forest. You notice a goblin strolling nearby. Suddenly, she stops and slowly looks around, staring directly at you. A moment later, your vision of the forest becomes blurry, eventually fading away to be replaced by your camp and its surroundings. ");
 				outputText("You shake your head, trying to figure out what had just happened. The only solution that you find within yourself is something that the soul cultivators you met in He’Xin’Dao mentioned. Another sense that they had developed, which allowed them to perceive distant places or find specific people over long distances. It looks as though you developed it, even without training.\n");
+				outputText("\n(<b>You have gained the ability to Soul Sense, allowing you to transport to certain NPCs and encounters without having to find them normally!</b>)\n");
 				player.createPerk(PerkLib.SoulSense, 0, 0, 0, 0);
 				needNext = true;
 			}
@@ -1069,35 +1070,35 @@ if (CoC.instance.model.time.hours > 23) { //Once per day
 				needNext = true;
 			}
 			if ((player.horns.type == Horns.BICORN || player.horns.type == Horns.UNICORN) && player.cor > 89 && player.findPerk(PerkLib.AvatorOfCorruption) < 0) {
-				outputText("\nA sudden wave of pleasure strike you making you moan");
+				outputText("\nA sudden wave of pleasure strikes you, making you moan");
 				if (player.horns.type == Horns.UNICORN) {
 					outputText(" as your horn begins to split in two");
 					player.horns.type = Horns.BICORN;
 				}
 				outputText(".");
 				if (player.hairColor != "black") {
-					outputText(" Your fur tingle and you coo in delight as it turn abyssal black.");
+					outputText(" Your fur tingles and you suddely coo in delight as they turn abyssal black.");
 					player.hairColor = "black";
 				}
 				if (player.eyes.colour != "red") {
-					outputText(" Meanwhile your eyes shine with malice as they take on a red corrupted tone reflecting the sorry state of your soul.");
+					outputText(" Your eyes shine with malice as they take on a red corrupted tone, reflecting the sorry state of your soul.");
 					player.eyes.colour = "red";
 				}
 				if (player.wings.type == Wings.FEATHERED_ALICORN) {
-					outputText(" Your wings aren’t spared either all the feather falling off to reveal a membranous demonic pair of bat wings.");
+					outputText(" Your wings aren’t spared either as all the feathers begin falling off, eventually revealing a membranous demonic pair of bat wings.");
 					player.wings.type = Wings.NIGHTMARE;
 				}
 				outputText(" <b>You giggle in delight of your own corruption as you fall from grace into a ");
 				if (player.wings.type == Wings.NIGHTMARE) outputText("nightmare");
 				else outputText("bicorn");
-				outputText(". Mighty magical power start to swell in the twin horns on your forehead, washing away whats left of any purity you may have, and you will gladly use them to despoil and tarnish anything pure or innocent left on mareth.</b>\n");
+				outputText(". Mighty magical powers start to swell in the twin horns on your forehead, washing away whats left of any purity you may have, and you think about how you will gladly use them to despoil and tarnish anything pure or innocent left on Mareth.</b>\n");
 				if (player.findPerk(PerkLib.AvatorOfPurity) >= 0) player.removePerk(PerkLib.AvatorOfPurity);
 				player.createPerk(PerkLib.AvatorOfCorruption, 0, 0, 0, 0);
 				player.cor = 100;
 				needNext = true;
 			}
 			if (player.horns.type == Horns.BICORN && player.wings.type == Wings.FEATHERED_ALICORN) {
-				outputText("\nYour wings changes as all the feather falling off to reveal a membranous demonic pair of bat wings.\n");
+				outputText("\nYour wings begin to twitch uncomfortably, as all the feathers begin falling off to reveal a membranous demonic pair of bat wings.\n");
 				player.wings.type = Wings.NIGHTMARE;
 				needNext = true;
 			}
@@ -1107,7 +1108,7 @@ if (CoC.instance.model.time.hours > 23) { //Once per day
 				needNext = true;
 			}
 			if ((player.horns.type == Horns.BICORN || player.horns.type == Horns.UNICORN) && player.cor < 11 && player.findPerk(PerkLib.AvatorOfPurity) < 0) {
-				outputText("\nA sudden wave of serenity pass over you as you realise how pure you have become.");
+				outputText("\nA sudden wave of serenity passes over you as you realise how pure you have become.");
 				if (player.horns.type == Horns.BICORN) {
 					outputText(" Your two horns merges into a single one and you can feel the pure unity of your horn restored.");
 					player.horns.type = Horns.UNICORN;
