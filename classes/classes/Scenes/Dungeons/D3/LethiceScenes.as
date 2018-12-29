@@ -22,12 +22,26 @@ public class LethiceScenes extends BaseContent
 		public static const GAME_END_CONQUER_MED:uint = 7;
 		public static const GAME_END_CONQUER_HIGH:uint = 8;
 
-		private function saveExport():void
+/*      private function saveExport():void
 		{
 			clearOutput();
 			outputText("What would you like to do?");
 			menu();
 			//addButton(0, "Export", exportSaveData).hint("Export your save for possible use in CoC2.");
+			if (flags[kFLAGS.GAME_END] == GAME_END_CONSORT)
+				addButtonDisabled(1, "Continue", "Nuh-uh. Mareth is too fucked up to let you continue and it's all due to the consequences you've made.");
+			else
+				addButton(1, "Continue", postEndingReturn).hint("Continue the game so you complete anything you've missed.");
+			addButton(4, "Quit", quitToMenu).hint("Quit and return to the main menu?");
+		}
+*/		
+
+		private function postEndingChoices():void {
+			clearOutput();
+			outputText(images.showImage("event-game"));
+			outputText("What would you like to do?");
+			menu();
+			addButton(0, "Export", exportSaveData).hint("Export your save for possible use in CoC2. (Unlikely but optimistic!)");
 			if (flags[kFLAGS.GAME_END] == GAME_END_CONSORT)
 				addButtonDisabled(1, "Continue", "Nuh-uh. Mareth is too fucked up to let you continue and it's all due to the consequences you've made.");
 			else
@@ -70,9 +84,23 @@ public class LethiceScenes extends BaseContent
 		private function postEndingReturn():void {
 			clearOutput();
 			outputText("You may have defeated Lethice and completed the main story but the fun isn't over! It's time for you to return to the game and begin a new era of Mareth.");
+			outputText("\n\n<b>You have also unlocked Ascension. Check it out in Camp Actions to enter New Game+.</b>");
 			//outputText("\n\n<b>You can now ascend if you like. Search for the book in the ruined cathedral and perform the ritual at your camp.</b>");
 			awardAchievement("Demon Slayer", kACHIEVEMENTS.STORY_FINALBOSS, true, true, false);
-			//if (player.level <= 1) awardAchievement("Ultimate Noob", kACHIEVEMENTS.CHALLENGE_ULTIMATE_NOOB, true, true, false); //Lethice beaten at level 1!
+			
+			// Note: uncomment when I eventually implement this - belaya
+			//Lethice beaten at level 1!
+			//if (player.level <= 1) awardAchievement("The Ultimate Noob", kACHIEVEMENTS.CHALLENGE_ULTIMATE_NOOB, true, true, false); 
+			//Lethice beaten without casting spells.
+			//if (flags[kFLAGS.SPELLS_CAST] <= 0) awardAchievement("The Mundane Champion", kACHIEVEMENTS.CHALLENGE_ULTIMATE_MUNDANE, true, true, false);
+			//Finish with no sex or masturbating.
+			//if (flags[kFLAGS.TIMES_MASTURBATED] <= 0 && flags[kFLAGS.TIMES_ORGASMED] <= 0) awardAchievement("The Celibate Hero", kACHIEVEMENTS.CHALLENGE_ULTIMATE_CELIBATE, true, true, false);
+			//Defeat without killing anybody and just show every enemy some MERCY.
+			//if (flags[kFLAGS.TOTAL_HP_VICTORIES] <= 0 && camp.getTotalKills() <= 0) awardAchievement("Pacifist", kACHIEVEMENTS.CHALLENGE_PACIFIST, true, true, false);
+			//Finish within 30 days or less on a fresh game.
+			//if (getGame().time.days <= 30 && player.newGamePlusMod() == 0) awardAchievement("Speedrunner", kACHIEVEMENTS.CHALLENGE_SPEEDRUN, true, true, false);
+			// end comment - b
+			
 			//inDungeon = false;
 			//inRoomedDungeon = false;
 			//player.HP = player.maxHP();
@@ -104,6 +132,7 @@ public class LethiceScenes extends BaseContent
 			}
 			else
 			{
+				outputText("Do you fight Lethice and attempt to overthrow her or join her in ruling over Mareth, spreading even more corruption?");
 				menu();
 				addButton(0, "Fight", goFight);
 				addButton(1, "Consort", joinHer);
@@ -590,7 +619,8 @@ public class LethiceScenes extends BaseContent
 			outputText("\n\n<b>THE END</b>");
 
 			flags[kFLAGS.GAME_END] = GAME_END_REDEMPTION;
-			saveExport();
+			//saveExport();
+			doNext(postEndingChoices);
 		}
 
 		private function joinHer():void
@@ -704,7 +734,8 @@ public class LethiceScenes extends BaseContent
 			outputText("\n\n<b>THE END</b>");
 
 			flags[kFLAGS.GAME_END] = GAME_END_CONSORT;
-			saveExport();
+			//saveExport();
+			doNext(postEndingChoices);
 		}
 
 		public function won(hpVictory:Boolean, pcCameWorms:Boolean):void
@@ -854,18 +885,36 @@ public class LethiceScenes extends BaseContent
 		private function theChoiceDunDunDun():void
 		{
 			menu();
-			addButton(0, "Kill Her", killHer);
+			addButton(0, "Kill Her", killHerPrompt);
 			addButton(1, "Leave Her", leaveHer);
+		}
+		
+		private function killHerPrompt():void {
+			if (player.weaponVerb == "slash" || player.weaponVerb == "cleave" || player.weaponVerb == "keen cut" || player.weaponVerb == "stab") {
+				clearOutput();
+				outputText("How shall you end Lethice? Do you snap her neck and make it quick? Or do you chop her head off and scare the demons?");
+				addButton(0, "Snap Her Neck", killHer, 0, null, null, "Snap her neck and make it quick.");
+				addButton(1, "Behead Her", killHer, 1, null, null, "Off with her head!\n\n(Warning: Contains gore!)");
+			}
+			else {
+				killHer();
+			}
 		}
 
 		private function killHer():void
 		{
 			clearOutput();
-
-			flags[kFLAGS.LETHICE_KILLED] = 1;
-
-			outputText("Lethice probably deserves the worst sorts of torture imaginable, but you don’t have time to dawdle. You snap her neck and drop her twitching body to the ground. The assembled demons scatter at the sight, fearful they’ll fall next - and rightly so. So long as they remain, there’s always the chance another will take her place.");
-
+			if (method == 0) {
+				outputText("Lethice probably deserves the worst sorts of torture imaginable, but you don’t have time to dawdle. You snap her neck and drop her twitching body to the ground. ");				
+				flags[kFLAGS.LETHICE_KILLED] = 1;
+			}
+			else if (method == 1) {
+				outputText(images.showImage("lethice-head"));
+				outputText("Lethice probably deserves a punishment that would fit her foul deeds indeed. You raise your [weapon] and slice through her neck, causing her head to fall to the floor and demonic blood spills forth. You pick up your prize and show it to the demons to let them know not to mess with you. ");
+				awardAchievement("Off With Her Head!", kACHIEVEMENTS.GENERAL_OFF_WITH_HER_HEAD, true, true, true);
+				flags[kFLAGS.LETHICE_KILLED] = 2; // 2 indicates Lethice beheaded
+			}
+			outputText("The assembled demons scatter at the sight, fearful they’ll fall next - and rightly so. So long as they remain, there’s always the chance another will take her place.");
 			postTheChoice();
 		}
 
@@ -907,9 +956,14 @@ public class LethiceScenes extends BaseContent
 		{
 			clearOutput();
 			outputText("<b>Weeks later...</b>\nThey had it. The damned bastards had it. Syrena, the head researcher had figured out how to open a stable portal months ago, but for whatever reason, she kept it from Lethice. There’s a shortage of evidence about what she was actually scheming, but you’d guess she was planning to take a cadre of loyal demons to an untainted plane and set herself up as a queen.");
-			outputText("\n\nNo room for loyalty among demons, you suppose. Still, with the information in these books, you can go home. Taking them back to your camp, you work the rituals on the portal to Ingnam{, assisted by your follower{s}}, and before you know it, the portal’s hazy mists resolve into a perfectly circle opening, one that leads to a familiar cave.");
+			outputText("\n\nNo room for loyalty among demons, you suppose. Still, with the information in these books, you can go home. Taking them back to your camp, you work the rituals on the portal to Ingnam");
+			if (camp.companionsCount() > 0) {
+				outputText(", assisted by your follower");
+				if (camp.companionsCount() > 1)
+					outputText("s");
+			}
+			outputText(", and before you know it, the portal’s hazy mists resolve into a perfectly circle opening, one that leads to a familiar cave.");
 			outputText("\n\nWill you seek vengeance or justice or with your return?");
-
 			menu();
 			addButton(0, "Vengeance", goHomeVeng);
 			addButton(1, "Justice", goHomeJustice);
@@ -919,34 +973,57 @@ public class LethiceScenes extends BaseContent
 		{
 			clearOutput();
 
-			outputText("<b>Later...\n</b>Tales of the Champion’s return are rarely told, not in the open anyway. "+ player.mf("He", "She") +" blew into town with all the subtlety of a cyclone, laying waste to the village’s elders and all who dared defend them. Every villager remembers that night, the night that their leadership was put to the torch - literally. Each of them was left to die inside his own burning mans, bathed in the scorching heat until naught remained but ashes and memories.");
-			outputText("\n\nAfter that night, there wasn’t a rebellious soul left alive to oppose to the Champion’s rule. "+ player.mf("He", "She") +" became the defacto "+ player.mf("King", "Queen") +" of the village, the breaker of the old ways and forger of the new.");
-			if (player.cor <= 33) outputText(" Despite the fear and terror of "+ player.mf("his", "her") +" arrival, "+ player.mf("he", "she") +" proved a fair and wise monarch. The village soon became a town, and that town a city. Prosperity came to those who lived in the valley, guided by the strength of its unshakable ruler.");
-			else if (player.cor <= 66) outputText(" Despite the fear and terror of "+ player.mf("his", "her") +" arrival, "+ player.mf("he", "she") +" proved a competent, if harsh monarch. The village’s prosperity was marred only by its limited liberties. Still, it was soon a town, and later a city. Most folk were willing to sacrifice their freedoms for the safety "+ player.mf("he", "she") +" provided.");
-			else outputText(" Despite the fear and terror of "+ player.mf("his", "her") +" arrival, "+ player.mf("he", "she") +" proved a capable monarch in spite of "+ player.mf("his", "her") +" rapacious tastes. The villagers dared not protest when their once-Champion treated their sons and daughters as little more than slaves. They feared to question where the fruits "+ player.mf("he", "she") +" provided came from, and why they felt so strange after eating them. Of course, these concerns did not stop them from breeding. Soon, nothing could. As the population of the valley swelled, the Champion amassed an army, one large enough to rival the nearby countries that had ignored it for so long.");
-			
-			saveExport();
+			outputText("<b>Later...\n</b>Tales of the Champion’s return are rarely told, not in the open anyway. " + player.mf("He","She") + " blew into town with all the subtlety of a cyclone, laying waste to the village’s elders and all who dared defend them. Every villager remembers that night, the night that their leadership was put to the torch - literally. Each of them was left to die inside his own burning mans, bathed in the scorching heat until naught remained but ashes and memories.");
+			outputText("\n\nAfter that night, there wasn’t a rebellious soul left alive to oppose to the Champion’s rule. " + player.mf("He","She") + " became the defacto " + player.mf("King","Queen") + " of the village, the breaker of the old ways and forger of the new.");
+			if(player.cor <= 33)
+			{
+				outputText(" Despite the fear and terror of " + player.mf("his","her") + " arrival, " + player.mf("he","she") + " proved a fair and wise monarch. The village soon became a town, and that town a city. Prosperity came to those who lived in the valley, guided by the strength of its unshakable ruler.");
+			}
+			else if(player.cor <= 66)
+			{
+				outputText(" Despite the fear and terror of " + player.mf("his","her") + " arrival, " + player.mf("he","she") + " proved a competent, if harsh monarch. The village’s prosperity was marred only by its limited liberties. Still, it was soon a town, and later a city. Most folk were willing to sacrifice their freedoms for the safety " + player.mf("he","she") + " provided.");
+			}
+			else
+			{
+				outputText(" Despite the fear and terror of " + player.mf("his","her") + " arrival, " + player.mf("he","she") + " proved a capable monarch in spite of " + player.mf("his","her") + " rapacious tastes. The villagers dared not protest when their once-Champion treated their sons and daughters as little more than slaves. They feared to question where the fruits " + player.mf("he","she") + " provided came from, and why they felt so strange after eating them. Of course, these concerns did not stop them from breeding. Soon, nothing could. As the population of the valley swelled, the Champion amassed an army, one large enough to rival the nearby countries that had ignored it for so long.");
+			}
+			doNext(postEndingChoices);
+			//saveExport();
 		}
 
 		private function goHomeJustice():void
 		{
 			clearOutput();
-			outputText("<b>Later...</b>\nTales of the Champions arrival spread far and wide. None expected "+ player.mf("his", "her") +" return, and yet "+ player.mf("he", "she") +" arrived all the same, weapon in hand before the council chambers, demanding the corrupt old men who once lead to face justice for their betrayal. At "+ player.mf("his", "her") +" feet were strange creatures, beings the Champion faced and defeated, brought to Ingnam’s world to testify to just how rotten the village’s core had become. Once they said their piece, "+ player.mf("he", "she"));
-			// 9999 check dis
-			if (player.cor >= 50) outputText(" put an end to their rank existence right there.");
-			else outputText(" sent them through a glowing portal of "+ player.mf("his", "her") +" own creation, never to be seen again.");
+			outputText("<b>Later...</b>\nTales of the Champions arrival spread far and wide. None expected " + player.mf("his","her") + " return, and yet " + player.mf("he","she") + " arrived all the same, weapon in hand before the council chambers, demanding the corrupt old men who once lead to face justice for their betrayal. At " + player.mf("his","her") + " feet were strange creatures, beings the Champion faced and defeated, brought to Ingnam’s world to testify to just how rotten the village’s core had become. Once they said their piece, " + player.mf("he","she"));
+			if(player.cor >= 50)
+			{
+				outputText(" put an end to their rank existence right there.");
+			}
+			else
+			{
+				outputText(" sent them through a glowing portal of " + player.mf("his","her") + " own creation, never to be seen again.");
+			}
 			outputText("\n\nElder Nomur protested hardest, but his treachery had been laid bare. Not even the most silver-tongued liar could stand against the living proof that the Champion offered.");
-			if (player.cor < 50) outputText(" In "+ player.mf("his", "her") +" wisdom, "+ player.mf("he", "she") +" stopped the townsfolk from lynching their traitorous leaders right there. Instead, they were banished, forever expelled from the lands of Ingnam on pain of death.");
-			else outputText(" The townsfolk lynched their traitorous leaders right there and then under the watchful eyes of the Champion. "+ player.mf("He", "She") +" nodded approvingly when they gave their last twitches, seemingly happy to let small-town justice run its course.");
-			outputText("\n\nLife continued on. A new council was chosen, but it was Champion [name] that most people followed. "+ player.mf("He", "She") +" had left on the cusp of adulthood and returned a grizzled");
-			// 9999 no idea what this is keyed off
-			// {, vivacious}
-			outputText(" warrior. With a seemingly infallable champion there to defend it");
-            if (SceneLib.camp.companionsCount() > 0) outputText(" to say nothing of " + player.mf("his", "her") + " bizarre friends");
-            outputText(", Ingnam prospered. The tiny village soon grew into a bustling town, and later a city.");
-			outputText("\n\nWhen age finally claimed the unexpected " + player.mf("hero", "heroine") +", a stone statue of immense proportions was erected so that future generations could forever live under the protection of their greatest hero.");
-			
-			saveExport();
+			if(player.cor < 50)
+			{
+				outputText(" In " + player.mf("his","her") + " wisdom, " + player.mf("he","she") + " stopped the townsfolk from lynching their traitorous leaders right there. Instead, they were banished, forever expelled from the lands of Ingnam on pain of death.");
+			}
+			else
+			{
+				outputText(" The townsfolk lynched their traitorous leaders right there and then under the watchful eyes of the Champion. " + player.mf("He","She") + " nodded approvingly when they gave their last twitches, seemingly happy to let small-town justice run its course.");
+			}
+			outputText("\n\nLife continued on. A new council was chosen, but it was Champion [name] that most people followed. " + player.mf("He","She") + " had left on the cusp of adulthood and returned a grizzled");
+			outputText(" warrior. With a seemingly infallible champion there to defend it");
+			if(getGame().camp.companionsCount() > 0)
+			{
+				outputText(" to say nothing of " + player.mf("his","her") + " bizarre friend");
+				if (camp.companionsCount() > 1)
+					outputText("s");
+			}
+			outputText(", Ingnam prospered. The tiny village soon grew into a bustling town, and later a city.");
+			outputText("\n\nWhen age finally claimed the unexpected " + player.mf("hero","heroine") + ", a stone statue of immense proportions was erected so that future generations could forever live under the protection of their greatest hero.");
+			doNext(postEndingChoices);
+			//saveExport();
 		}
 
 		private function claimFortress():void
@@ -1134,7 +1211,8 @@ public class LethiceScenes extends BaseContent
 			}
 		
 			outputText("\n\n<b>THE END</b>");
-			saveExport();
+			//saveExport();
+			doNext(postEndingChoices);
 		}
 
 		private function conquer():void
@@ -1203,7 +1281,8 @@ public class LethiceScenes extends BaseContent
 
 				flags[kFLAGS.GAME_END] = GAME_END_CONQUER_HIGH;
 			}
-			saveExport();
+			//saveExport();
+			doNext(postEndingChoices);
 		}
 		
 		public function takeLethiciteArmor():void {
